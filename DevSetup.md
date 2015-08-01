@@ -16,3 +16,11 @@
 6. set NODE_ENV environment variable
     * For OSX or Linux - ```export NODE_ENV=development```
     * For Windows - ```SET NODE_ENV=development```
+    
+# Running the Application
+
+1. ```npm install```
+
+2. ```grunt```
+
+3. Open the following url on browser [http://localhost:3000/](http://localhost:3000/)
