@@ -23,4 +23,4 @@
 
 2. ```grunt```
 
-3. Open the following url on browser [http://localhost:3000/](http://localhost:3000/)
+3. Open the following url on browser [http://localhost:8081/](http://localhost:8081/)
