@@ -1,0 +1,18 @@
+<section data-ng-controller="NewBusStopController">
+<h1 style="margin-top:30px">New Bus Stop</h1><hr>
+	<form>
+	  <div class="form-group">
+	    <label for="busStopName">Name</label>
+	    <input type="text" class="form-control" id="busStopName" placeholder="Name" ng-model="stopname">
+	  </div>
+	  <div class="form-group">
+	    <label for="latitude">Latitude</label>
+	    <input type="text" class="form-control" id="latitude" placeholder="Latitude" ng-model="lat">
+	  </div>
+	  <div class="form-group">
+	    <label for="longitude">Longitude</label>
+	    <input type="text" class="form-control" id="longitude" placeholder="Longitude" ng-model="longitude">
+	  </div>
+	  <button type="submit" class="btn btn-default" ng-click="addBusStop()">Submit</button>
+	</form>
+</section>

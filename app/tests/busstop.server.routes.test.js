@@ -38,10 +38,10 @@ describe('BusStop CRUD tests', function() {
 	it('should be able to add a new busstop', function(done) {
         request.agent(app).post('/busstops').
         	send({
-	    		"name": "sandh-stop",
-	   			"location":{
-	        	"type":"Polygon",
-	         	"coordinates":[]
+	    		'name': 'sandh-stop',
+	   			'location':{
+	        	'type':'Polygon',
+	         	'coordinates':[]
     		}
 			})
         	.expect(200)
