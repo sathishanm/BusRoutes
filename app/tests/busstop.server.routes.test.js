@@ -35,6 +35,21 @@ describe('BusStop CRUD tests', function() {
 		});
 	});
 
+	it('should be able to add a new busstop', function(done) {
+        request.agent(app).post('/busstops').
+        	send({
+	    		"name": "sandh-stop",
+	   			"location":{
+	        	"type":"Polygon",
+	         	"coordinates":[]
+    		}
+			})
+        	.expect(200)
+            .end(function(busStopErr, busStopSaveRes) {
+				done();
+			});
+	});			
+
 	afterEach(function(done) {
 		BusStop.remove().exec(done);
 	});
