@@ -1,7 +1,8 @@
-<section data-ng-controller="BusStopsController" data-ng-init="find()">
+<section data-ng-init="find()">
 	<div class="page-header">
 		<h1>Bus Stops</h1>	
-		<a class="btn btn-primary" href="#!/addbusstop" role="button">Add New Stop</a>    	
+		<a class="btn btn-primary" href="#!/busstops/near" role="button">Show Stops Near Me</a>    	
+		<a class="btn" href="#!/addbusstop" role="button">Add New Stop</a>    	
 	</div>
 	<div class="list-group">
 		<a data-ng-repeat="stop in busstops" class="list-group-item" href="#!/busstops/{{ stop._id }}">

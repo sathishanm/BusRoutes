@@ -9,7 +9,16 @@ var mongoose = require('mongoose'),
 	_ = require('lodash');
 
 exports.list = function(req, res) {
-	BusStop.find().exec(function(err, busstops) {
+    var query;
+    if (req.query.lat && req.query.lng) {
+        query = BusStop.find({'location.coordinates':
+                    {$near: { $geometry: 
+                                {'type':'Point', 'coordinates':[req.query.lat, req.query.lng]},
+                     $maxDistance: 500}}});
+    } else {
+        query = BusStop.find();
+    }
+	query.exec(function(err, busstops) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)

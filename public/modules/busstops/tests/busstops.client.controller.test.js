@@ -50,7 +50,7 @@
         });
 
         it('$scope.get() should get a single bus stop', function() {
-            $routeParams.stopId = "10";
+            $routeParams.stopId = '10';
             $httpBackend.expectGET('busstops/10').respond(sampleStops[0]);
             scope.get();
             $httpBackend.flush();
