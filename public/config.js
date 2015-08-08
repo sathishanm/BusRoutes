@@ -4,7 +4,8 @@
 var ApplicationConfiguration = (function() {
 	// Init module configuration options
 	var applicationModuleName = 'busroutes';
-	var applicationModuleVendorDependencies = ['ngResource', 'ngAnimate', 'ngRoute', 'ui.bootstrap', 'ui.utils'];
+	var applicationModuleVendorDependencies = ['ng', 'ngResource', 'ngAnimate', 'ngRoute',
+                                               'ui.bootstrap', 'ui.utils', 'leaflet-directive'];
 
 	// Add a new vertical module
 	var registerModule = function(moduleName, dependencies) {

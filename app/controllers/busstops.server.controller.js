@@ -21,10 +21,7 @@ exports.list = function(req, res) {
 };
 
 exports.add = function(req, res) {
-	
-	console.log(req.body);
 	var busstop = new BusStop(req.body);
-	console.log(busstop);
 
 	busstop.save(function(err) {
 		if (err) {
@@ -35,6 +32,22 @@ exports.add = function(req, res) {
 			res.json(busstop);
 		}
 	});
-
 };
 
+exports.find = function(req, res) {
+    res.json(req.busstop);
+};
+
+exports.getStopById = function (req, res, next, id) {
+  BusStop.findById(id).exec(function (err, busstop) {
+    if (err) {
+      return next(err);
+    } else if (!busstop) {
+      return res.status(404).send({
+        message: 'No bus stop with that identifier has been found'
+      });
+    }
+    req.busstop = busstop;
+    next();
+  });
+};

@@ -8,6 +8,10 @@ angular.module('busstops').config(['$routeProvider',
 			templateUrl: 'modules/busstops/views/list-busstops.client.view.html',
             controller: 'BusStopsController'
 		}).
+        when('/busstops/:stopId', {
+            templateUrl: 'modules/busstops/views/show-busstop.client.view.html',
+            controller: 'BusStopsController'
+        }).
 		when('/addbusstop', {
 			templateUrl: 'modules/busstops/views/add-new-busstop.html',
             controller: 'NewBusStopController'

@@ -50,6 +50,16 @@ describe('BusStop CRUD tests', function() {
 			});
 	});			
 
+    it('should be able to get a single busstop', function(done) {
+        var busstopId = busstop._id;
+        request.agent(app).get('/busstops/' + busstopId)
+            .expect(200)
+            .end(function(err, res) {
+                res.body.name.should.equal('Jayanagara 9th Block');
+                done();
+            });
+    });
+
 	afterEach(function(done) {
 		BusStop.remove().exec(done);
 	});

@@ -11,5 +11,8 @@ module.exports = function(app) {
 		.get(busstops.list)
 		.post(busstops.add);
 
+    app.route('/busstops/:stopId')
+        .get(busstops.find);
 
+    app.param('stopId', busstops.getStopById);
 };
